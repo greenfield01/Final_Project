@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List all ailments</title>
+</head>
+<body>
+    <h1>List of Ailments</h1>
+    <ul>
+        {% for ailment in ailments %}
+	<li>{{ ailment.ailment_name }}, {{ ailment.drugs}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
