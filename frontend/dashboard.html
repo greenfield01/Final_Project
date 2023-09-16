@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./styles/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <div class="profile-picture">
+        <img src="./assest/medical-logo.jpg" alt="User Profile Picture" />
+        <span class="logo_text">MediGuide</span>
+      </div>
+
+      <div class="profile_details">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <button class="search-button">Search</button>
+        </div>
+        <div class="user-info">
+          <div class="profile-picture">
+            <img src="./assest/profile_img.png" alt="User Profile Picture" />
+          </div>
+          <div class="user-name" id="user-dropdown-toggle">
+            John Doe
+            <!-- Replace with the user's name -->
+          </div>
+          <button class="add-data-button" id="open-data-modal">Add Data</button>
+        </div>
+        <div><button class="logout-button">Logout</button></div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="sidebar">
+        <!-- Sidebar content goes here -->
+        <h2>Advert</h2>
+        <div class="advert">
+          <img src="./assest/ad-1.jpeg" alt="" srcset="" />
+        </div>
+        <div class="advert">
+          <img src="./assest/ad-2.jpeg" alt="" srcset="" />
+        </div>
+      </div>
+      <main class="main">
+        <!-- Main content goes here -->
+        <h1>Welcome to Your Dashboard John Doe</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          consectetur quam eget tellus euismod, eget luctus urna euismod. Sed
+          nec arcu nec neque ultrices vehicula eu vel lorem.
+        </p>
+        <ul>
+          <li>
+            Malaria
+            <div class="content">
+              <article id="content-1">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis labore repellat dolorum cupiditate illum enim
+                  quaerat fugit sit porro nihil delectus quod veniam provident
+                  amet blanditiis molestiae, praesentium quia, consectetur
+                  architecto nemo quam, impedit excepturi? Repudiandae, ex
+                  maiores illo impedit deserunt quam sapiente esse in. Sunt ea
+                  illum hic nostrum id labore pariatur doloribus fugit
+                  exercitationem sed non quae repellendus voluptates architecto
+                  quia eaque, culpa nam asperiores perspiciatis adipisci maxime
+                  ab minima consequuntur. Corrupti excepturi qui quae nemo
+                  tenetur veritatis reprehenderit veniam a officia natus magnam
+                  obcaecati, earum omnis sequi mollitia quo porro hic aliquid
+                  consectetur illum repellendus, voluptatum suscipit.
+                </p>
+                <p>
+                  Voluptatum quaerat et corrupti fuga error perferendis! Enim,
+                  asperiores laboriosam! Excepturi minima distinctio fugit velit
+                  neque odit nam facilis modi magnam totam quae, hic repellat
+                  inventore placeat in maiores vitae recusandae beatae,
+                  aspernatur aut quod voluptas, dolor deleniti. Aliquid
+                  inventore placeat quasi, voluptatum assumenda, et possimus, ea
+                  amet animi id distinctio. Natus voluptates, vero beatae eius
+                  consequuntur omnis earum quas totam laborum veniam aperiam
+                  accusamus voluptatum alias dolore optio quae exercitationem
+                  cupiditate ipsam blanditiis qui nam sit molestiae commodi.
+                  Possimus quos excepturi sequi, neque aut dolore consequatur
+                  modi error odit iste distinctio omnis nisi, similique magnam
+                  cupiditate aliquid alias reiciendis.
+                </p>
+                <p>
+                  Suscipit, nobis unde! Consequatur possimus tenetur reiciendis
+                  similique nihil dicta corrupti cupiditate omnis magnam
+                  suscipit. Consequuntur corporis enim minus numquam, assumenda
+                  explicabo, voluptatibus, aut quibusdam quos nobis totam?
+                  Maxime ab est beatae sit delectus! Atque voluptate corporis
+                  omnis sed, amet, ut voluptatibus ad, quod quasi commodi
+                  tempora magnam. Saepe reiciendis assumenda fuga quis officia
+                  sed repellendus incidunt. Sint voluptate incidunt officia
+                  repudiandae vitae! Consectetur, magni et! Libero explicabo
+                  tempore, soluta voluptate maiores nisi voluptatum harum vel
+                  repellendus quisquam, asperiores magni praesentium repudiandae
+                  amet adipisci nam. Earum, dolorem aliquid alias molestias,
+                  ullam cumque, quae eum nostrum consequatur iusto inventore
+                  modi hic.
+                </p>
+                <p>
+                  Dignissimos, ex facere reprehenderit labore nemo quo quas odio
+                  asperiores aliquid dolorem. Debitis repudiandae assumenda esse
+                  maiores fugiat earum eum, repellendus voluptatibus laborum
+                  soluta quo! Error iure animi voluptas hic sint itaque, numquam
+                  a quis possimus dolore delectus ut, optio consequatur
+                  sapiente, in quibusdam perferendis ratione? Magnam consequatur
+                  debitis eius. Placeat corrupti delectus sit exercitationem
+                  quod dolores saepe eum, tempore, molestiae, itaque autem?
+                  Perspiciatis ipsa tempora dolores nam. Accusantium perferendis
+                  possimus voluptatibus animi voluptates magnam iusto quisquam
+                  amet consequuntur dolores culpa quam qui, quae non dignissimos
+                  id nihil quaerat nulla consequatur dolorum. Consequuntur
+                  expedita suscipit cum doloremque ex, est inventore.
+                </p>
+              </article>
+
+              <div class="articleBtn">
+                <div>
+                  <button
+                    class="readMoreBtn"
+                    id="read-more"
+                    onclick="readMore(event,'content-1')"
+                  >
+                    Read more
+                  </button>
+                </div>
+                <div>
+                  <button class="scheduleBtn" id="schedule-Btn">
+                    Schedule
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            Catarrh
+            <div class="content">
+              <article id="content-2">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis labore repellat dolorum cupiditate illum enim
+                  quaerat fugit sit porro nihil delectus quod veniam provident
+                  amet blanditiis molestiae, praesentium quia, consectetur
+                  architecto nemo quam, impedit excepturi? Repudiandae, ex
+                  maiores illo impedit deserunt quam sapiente esse in. Sunt ea
+                  illum hic nostrum id labore pariatur doloribus fugit
+                  exercitationem sed non quae repellendus voluptates architecto
+                  quia eaque, culpa nam asperiores perspiciatis adipisci maxime
+                  ab minima consequuntur. Corrupti excepturi qui quae nemo
+                  tenetur veritatis reprehenderit veniam a officia natus magnam
+                  obcaecati, earum omnis sequi mollitia quo porro hic aliquid
+                  consectetur illum repellendus, voluptatum suscipit.
+                </p>
+                <p>
+                  Voluptatum quaerat et corrupti fuga error perferendis! Enim,
+                  asperiores laboriosam! Excepturi minima distinctio fugit velit
+                  neque odit nam facilis modi magnam totam quae, hic repellat
+                  inventore placeat in maiores vitae recusandae beatae,
+                  aspernatur aut quod voluptas, dolor deleniti. Aliquid
+                  inventore placeat quasi, voluptatum assumenda, et possimus, ea
+                  amet animi id distinctio. Natus voluptates, vero beatae eius
+                  consequuntur omnis earum quas totam laborum veniam aperiam
+                  accusamus voluptatum alias dolore optio quae exercitationem
+                  cupiditate ipsam blanditiis qui nam sit molestiae commodi.
+                  Possimus quos excepturi sequi, neque aut dolore consequatur
+                  modi error odit iste distinctio omnis nisi, similique magnam
+                  cupiditate aliquid alias reiciendis.
+                </p>
+                <p>
+                  Suscipit, nobis unde! Consequatur possimus tenetur reiciendis
+                  similique nihil dicta corrupti cupiditate omnis magnam
+                  suscipit. Consequuntur corporis enim minus numquam, assumenda
+                  explicabo, voluptatibus, aut quibusdam quos nobis totam?
+                  Maxime ab est beatae sit delectus! Atque voluptate corporis
+                  omnis sed, amet, ut voluptatibus ad, quod quasi commodi
+                  tempora magnam. Saepe reiciendis assumenda fuga quis officia
+                  sed repellendus incidunt. Sint voluptate incidunt officia
+                  repudiandae vitae! Consectetur, magni et! Libero explicabo
+                  tempore, soluta voluptate maiores nisi voluptatum harum vel
+                  repellendus quisquam, asperiores magni praesentium repudiandae
+                  amet adipisci nam. Earum, dolorem aliquid alias molestias,
+                  ullam cumque, quae eum nostrum consequatur iusto inventore
+                  modi hic.
+                </p>
+                <p>
+                  Dignissimos, ex facere reprehenderit labore nemo quo quas odio
+                  asperiores aliquid dolorem. Debitis repudiandae assumenda esse
+                  maiores fugiat earum eum, repellendus voluptatibus laborum
+                  soluta quo! Error iure animi voluptas hic sint itaque, numquam
+                  a quis possimus dolore delectus ut, optio consequatur
+                  sapiente, in quibusdam perferendis ratione? Magnam consequatur
+                  debitis eius. Placeat corrupti delectus sit exercitationem
+                  quod dolores saepe eum, tempore, molestiae, itaque autem?
+                  Perspiciatis ipsa tempora dolores nam. Accusantium perferendis
+                  possimus voluptatibus animi voluptates magnam iusto quisquam
+                  amet consequuntur dolores culpa quam qui, quae non dignissimos
+                  id nihil quaerat nulla consequatur dolorum. Consequuntur
+                  expedita suscipit cum doloremque ex, est inventore.
+                </p>
+              </article>
+
+              <div class="articleBtn">
+                <div>
+                  <button
+                    class="readMoreBtn"
+                    id="read-more"
+                    onclick="readMore(event,'content-2')"
+                  >
+                    Read more
+                  </button>
+                </div>
+                <div>
+                  <button class="scheduleBtn" id="schedule-Btn">
+                    Schedule
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            Typhoid
+            <div class="content">
+              <article id="content-3">
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis labore repellat dolorum cupiditate illum enim
+                  quaerat fugit sit porro nihil delectus quod veniam provident
+                  amet blanditiis molestiae, praesentium quia, consectetur
+                  architecto nemo quam, impedit excepturi? Repudiandae, ex
+                  maiores illo impedit deserunt quam sapiente esse in. Sunt ea
+                  illum hic nostrum id labore pariatur doloribus fugit
+                  exercitationem sed non quae repellendus voluptates architecto
+                  quia eaque, culpa nam asperiores perspiciatis adipisci maxime
+                  ab minima consequuntur. Corrupti excepturi qui quae nemo
+                  tenetur veritatis reprehenderit veniam a officia natus magnam
+                  obcaecati, earum omnis sequi mollitia quo porro hic aliquid
+                  consectetur illum repellendus, voluptatum suscipit.
+                </p>
+                <p>
+                  Voluptatum quaerat et corrupti fuga error perferendis! Enim,
+                  asperiores laboriosam! Excepturi minima distinctio fugit velit
+                  neque odit nam facilis modi magnam totam quae, hic repellat
+                  inventore placeat in maiores vitae recusandae beatae,
+                  aspernatur aut quod voluptas, dolor deleniti. Aliquid
+                  inventore placeat quasi, voluptatum assumenda, et possimus, ea
+                  amet animi id distinctio. Natus voluptates, vero beatae eius
+                  consequuntur omnis earum quas totam laborum veniam aperiam
+                  accusamus voluptatum alias dolore optio quae exercitationem
+                  cupiditate ipsam blanditiis qui nam sit molestiae commodi.
+                  Possimus quos excepturi sequi, neque aut dolore consequatur
+                  modi error odit iste distinctio omnis nisi, similique magnam
+                  cupiditate aliquid alias reiciendis.
+                </p>
+                <p>
+                  Suscipit, nobis unde! Consequatur possimus tenetur reiciendis
+                  similique nihil dicta corrupti cupiditate omnis magnam
+                  suscipit. Consequuntur corporis enim minus numquam, assumenda
+                  explicabo, voluptatibus, aut quibusdam quos nobis totam?
+                  Maxime ab est beatae sit delectus! Atque voluptate corporis
+                  omnis sed, amet, ut voluptatibus ad, quod quasi commodi
+                  tempora magnam. Saepe reiciendis assumenda fuga quis officia
+                  sed repellendus incidunt. Sint voluptate incidunt officia
+                  repudiandae vitae! Consectetur, magni et! Libero explicabo
+                  tempore, soluta voluptate maiores nisi voluptatum harum vel
+                  repellendus quisquam, asperiores magni praesentium repudiandae
+                  amet adipisci nam. Earum, dolorem aliquid alias molestias,
+                  ullam cumque, quae eum nostrum consequatur iusto inventore
+                  modi hic.
+                </p>
+                <p>
+                  Dignissimos, ex facere reprehenderit labore nemo quo quas odio
+                  asperiores aliquid dolorem. Debitis repudiandae assumenda esse
+                  maiores fugiat earum eum, repellendus voluptatibus laborum
+                  soluta quo! Error iure animi voluptas hic sint itaque, numquam
+                  a quis possimus dolore delectus ut, optio consequatur
+                  sapiente, in quibusdam perferendis ratione? Magnam consequatur
+                  debitis eius. Placeat corrupti delectus sit exercitationem
+                  quod dolores saepe eum, tempore, molestiae, itaque autem?
+                  Perspiciatis ipsa tempora dolores nam. Accusantium perferendis
+                  possimus voluptatibus animi voluptates magnam iusto quisquam
+                  amet consequuntur dolores culpa quam qui, quae non dignissimos
+                  id nihil quaerat nulla consequatur dolorum. Consequuntur
+                  expedita suscipit cum doloremque ex, est inventore.
+                </p>
+              </article>
+
+              <div class="articleBtn">
+                <div>
+                  <button
+                    class="readMoreBtn"
+                    onclick="readMore(event,'content-3')"
+                  >
+                    Read more
+                  </button>
+                </div>
+                <div>
+                  <button class="scheduleBtn" id="schedule-Btn">
+                    Schedule
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <!-- User Profilr Edit -->
+      <div class="user-dropdown" id="user-dropdown-content">
+        <ul>
+          <li>Profile Update</li>
+          <li>Category</li>
+        </ul>
+      </div>
+
+      <!-- Add Data Modal -->
+      <div class="add-data-form" id="add-data-form">
+        <div class="modal" id="add-data-modal">
+          <div class="modal-content">
+            <span class="close-button" id="close-button">&times;</span>
+            <h2>Add Data</h2>
+            <form>
+              <!-- Form fields go here -->
+              <label for="data">Data:</label>
+              <input type="text" id="data" name="data" required />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/dashboard.js"></script>
+  </body>
+</html>
