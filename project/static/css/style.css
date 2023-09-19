@@ -1,0 +1,343 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Radio Canada', sans-serif;
+ }
+
+ /* Generic */
+ .sub-heading {
+   padding: 2.4rem 3.6rem;
+   text-align: center;
+}
+
+.sub-heading h2{
+   font-weight: 600;
+   font-size: 3.6rem;
+}
+
+section {
+   margin-top: 2.4rem;
+   margin-bottom: 1.8rem;
+}
+
+.section-content,
+.pricing-content {
+   display: flex;
+   gap: 1.2rem;
+   justify-items: center;
+}
+
+ /* Header and Navigation Styles */
+
+nav {
+   background-color: #50a837;
+   
+ }
+
+ .navbar-brand {
+   color: #fff;
+   font-weight: 600;
+ }
+
+.nav-item .nav-link {
+   color: #fff;
+}
+
+.nav-item .nav-link:hover {
+   font-weight: 700;
+   transition: 4ms all;
+}
+
+.signup {
+   border: 1px solid #fff;
+   border-radius: 6px;
+}
+
+.signup:hover {
+   background-color: #fff;
+   color: #50a837;
+}
+
+.hero-section {
+   height: 25px;
+   margin-top: 5.6rem;
+   margin-bottom: 3.6rem;
+   height: 75vh;
+}
+
+.first-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.carousel-item .carousel_img {
+   height: 75vh;
+}
+
+/* .item-header {
+   font-size: 48px;
+   font-weight: 700;
+   color: #fff;
+}
+
+.item-description {
+   font-size: 24px;
+   font-weight: 400;
+   color: #fff;
+}
+
+
+.btn-explore {
+   background-color: #50a837;
+   padding: 12px 24px;
+   border-radius: 10px;
+   color: #fff;
+   font-weight: 400;
+   cursor: pointer;
+} */
+
+/* .btn-container .btn-explore:hover {
+   background-color: red;
+}
+
+.btn-container .btn-explore {
+   text-decoration: none;
+} */
+
+/* Features styles */
+.features {
+   background-color:#50a837
+}
+
+.features-content {
+   justify-content: space-around;
+}
+
+.features-heading {
+   color: #fff;
+}
+
+.feature-item {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   width: 12.4srem;
+   background-color: #fff;
+   padding: 10px;
+   border-radius: 5px;
+   box-shadow: -4px 0px 8px -3px;
+   margin-bottom: 3.6rem;
+}
+
+.feature-item:hover,
+.title:hover{
+   background-color: #f6f1f1;
+   transition: all .9s ease-out;
+}
+
+.feature-item h4{ 
+   font-weight: 500;
+}
+
+/* Pricing Styles */
+
+.pricing-content {
+   justify-content: space-evenly;
+   gap: .5rem;
+}
+.pricing-heading h2{
+   /* color: rgb(84, 71, 71) */
+   color: #50a837;
+}
+
+.pricing-heading p{
+   color: #37a880;
+}
+
+.title {
+   border: 2px solid #50a837;
+   border-radius: 5px;
+   text-align: center;
+   padding: 6px 8px;
+   box-shadow: -4px 0px 8px -3px;
+   margin-bottom: 1.2rem;
+}
+
+
+.title h6 {
+   padding: 8px;
+   font-size: 2rem;
+   border-bottom: 3px solid #50a837;
+}
+
+.elite {
+   border: 9px solid #50a837;
+}
+
+.title-amount {
+   font-size: 1.2rem;
+   font-weight: 700;
+}
+
+.title-amount p span {
+   text-decoration: line-through;
+}
+
+.title-details ul li,
+.footer-menu ul li {
+   list-style: none;
+}
+.btn-free {
+   background-color: #50a837;
+   color: #fff;
+}
+
+.btn-free:hover{
+   background-color: #37a880;
+   color: #fff;
+}
+
+
+/* Footer Styles */
+
+.footer {
+   background-color: #50a837;
+   padding: 2.4rem 4.8rem;
+}
+
+.footer-content, 
+.footer-letter,
+.footer-menu{
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.footer-letter div {
+   color: #fff;
+}
+
+.footer-header {
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+   margin-bottom: 1.2rem;
+}
+
+.footer-menu h5,
+.footer-contact h5,
+.footer-bottom p,
+.label{
+   color: #fff;
+   font-weight: 400;
+}
+
+.footer-menu ul li a{
+   text-decoration: none;
+   color: #fff;
+   font-size: 1.2rem;
+}
+
+.footer-bottom {
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+   border-top: 3px solid #f6f1f1;
+   padding-top: 1rem;
+}
+.footer-social svg {
+   fill: #fff;
+}
+/* .footer-social {
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+} */
+
+.btn-subscribe,
+.contact-btn{
+   background-color: #fff;
+   color: #50a837
+}
+
+.contact-btn {
+   margin-top: 1rem;
+}
+
+.btn-subscribe:hover,
+.contact-btn:hover {
+   color: #50a837;
+   background-color: #f6f1f1
+}
+
+
+/* Login Styles */
+
+.form_container{
+   width: 40%;
+   margin: 5.6rem auto;
+   padding: 4.8rem;
+   box-shadow: -4px 0px 8px -3px;
+}
+
+.form_container-header {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   text-align: center;
+   margin-bottom: 1rem;
+}
+
+.form_container-header h5 {
+   font-size: 1.8rem;
+   color: black;
+}
+
+.form_container-header .form_title-header{
+   color: #50a837;
+   font-size: 1rem;
+   font-weight: 600;
+}
+
+.form_btn {
+   padding: 12px;
+   margin-top: 1rem;
+   border-radius: 5px;
+   text-align: center;
+   color: #fff;
+   font-size: 1.2rem;
+   font-weight: 500;
+   background-color: #50a837;
+}
+
+.form_container-body input {
+   padding: 12px;
+}
+
+.form_container-body input:focus {
+   border: 2px solid #50a837;
+}
+
+.form_btn:hover {
+   color: #f6f1f1;
+   background-color: #37a880;
+}
+
+.form-check {
+   display: flex;
+   justify-content: space-around;
+   justify-items: center;
+   gap: 8px;
+}
+
+.remember {
+   margin-top: 1rem;
+   margin-bottom: 1.2rem;
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+}
+.default {
+   color: black;
+}

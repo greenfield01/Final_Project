@@ -14,8 +14,44 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    return render_template('profile.html', name=current_user.firstname)
 
+
+@main.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+    if request.method == 'POST':
+        ailment_name = request.form['ailment']
+        symptoms = request.form['symptoms']
+        causes = request.form['causes']
+        effects = request.form['effects']
+        natural_treatments = request.form['naturaltreatments']
+        drugs = request.form['drugs']
+        diets = request.form['diets']
+        exercise = request.form['exercises']
+
+
+        ailment = Ailment(
+            ailment_name=ailment_name,
+            symptoms=symptoms,
+            causes=causes,
+            effects=effects,
+            natural_treatments=natural_treatments,
+            drugs=drugs,
+            diets=diets,
+            exercise=exercise
+        )
+
+        db.session.add(ailment)
+        db.session.commit()
+
+        flash('Ailment added successfully!', 'success')
+
+        return redirect(url_for('main.dashboard'))
+    flash('Please update Ailments')
+
+    ailments = Ailment.query.all()
+    return render_template('dashboard.html', user=current_user, ailments=ailments)
 
 @main.route('/display_ailments')
 def display_ailments():

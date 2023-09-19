@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
-from .models import User
+from .models import User, Ailment
 from . import db
 
 auth = Blueprint('auth', __name__)
@@ -23,25 +23,43 @@ def login_post():
         return redirect(url_for('auth.login'))
     
     login_user(user, remember=remember)
-    return redirect(url_for('main.profile'))
+    #return redirect(url_for('main.dashboard'))
+    if password == "administratorpass":
+        admin = "administrator"
+        ailments = Ailment.query.all()
+        user = login_user(user, remember=remember)
+        return render_template('dashboard.html', admin=admin, user=user, ailments=ailments)
+    return redirect(url_for('main.dashboard'))
+
+@auth.route('/forgotpassword')
+def forgotpassword():
+    return render_template('forgotpassword.html')
 
 
-@auth.route('/signup')
-def signup():
-    return render_template('signup.html')
+@auth.route('/changepassword')
+def changepassword():
+    return render_template('changepassword.html')
 
-@auth.route('/signup', methods=['POST'])
-def signup_post():
+
+
+@auth.route('/register')
+def register():
+    return render_template('register.html')
+
+
+@auth.route('/register', methods=['POST'])
+def register_post():
     email = request.form.get('email')
-    name = request.form.get('name')
+    firstname = request.form.get('firstname')
+    lastname = request.form.get('lastname')
     password = request.form.get('password')
 
     user = User.query.filter_by(email=email).first()
     if user:
         flash('This email address is already registered!')
-        return redirect(url_for('auth.signup'))
+        return redirect(url_for('auth.register'))
 
-    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, firstname=firstname, lastname=lastname, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
 
