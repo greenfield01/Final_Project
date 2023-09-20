@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}"
+    />
   </head>
   <body>
     <header>
       <div class="profile-picture">
-	      <img src="{{ url_for('static', filename='images/medical-logo.jpg') }}" alt="User Profile Picture" />
+        <img
+          src="{{ url_for('static', filename='images/medical-logo.jpg') }}"
+          alt="User Profile Picture"
+        />
         <span class="logo_text">MediGuide</span>
       </div>
 
@@ -20,21 +26,31 @@
         </div>
         <div class="user-info">
           <div class="profile-picture">
-		  <img src="{{ url_for('static', filename='images/profile_img.png') }}" alt="User Profile Picture" />
+            <img
+              src="{{ url_for('static', filename='images/profile_img.png') }}"
+              alt="User Profile Picture"
+            />
           </div>
           <div class="user-name" id="user-dropdown-toggle">
-		  {{ user.firstname }} {{ user.lastname }}
+            {{ user.firstname }} {{ user.lastname }}
             <!-- Replace with the user's name -->
-	   
           </div>
-	  {% if admin %}
+          {% if admin %}
           <button class="add-data-button" id="open-data-modal">Add Data</button>
-	  {% else %}
-	  <button class="add-data-button" id="open-data-modal" style="display:none;">Add Data</button>
+          {% else %}
+          <button
+            class="add-data-button"
+            id="open-data-modal"
+            style="display: none"
+          >
+            Add Data
+          </button>
           {% endif %}
-	</div>
-      
-	<div><a href="{{ url_for('auth.login') }}" class="logout-button">Logout</a></div>
+        </div>
+
+        <div>
+          <a href="{{ url_for('auth.login') }}" class="logout-button">Logout</a>
+        </div>
       </div>
     </header>
     <div class="container">
@@ -42,48 +58,42 @@
         <!-- Sidebar content goes here -->
         <h2>Advert</h2>
         <div class="advert">
-          <img src="{{ url_for('static', filename='images/ad-1.jpeg') }}" alt="" srcset="" />
+          <img
+            src="{{ url_for('static', filename='images/ad-1.jpeg') }}"
+            alt=""
+            srcset=""
+          />
         </div>
         <div class="advert">
-		<img src="{{ url_for('static', filename='images/ad-2.jgep') }}" alt="" srcset="" />
+          <img
+            src="{{ url_for('static', filename='images/ad-2.jgep') }}"
+            alt=""
+            srcset=""
+          />
         </div>
       </div>
       <main class="main">
         <!-- Main content goes here -->
         <h1>Welcome to Your Dashboard {{ user.firstname }}</h1>
         <p>
-          Are you looking for reliable, personalized guidance on managing your health and well-being? Look no further! Welcome to MediHealth, your dedicated online platform designed to empower you with essential health information tailored to your unique medical condition.
+          Are you looking for reliable, personalized guidance on managing your
+          health and well-being? Look no further! Welcome to MediHealth, your
+          dedicated online platform designed to empower you with essential
+          health information tailored to your unique medical condition.
         </p>
-	<ul>
-	{% if admin %}
-		{{ admin }}
-	{% endif %}
-	{% for ailment in ailments %} 
+        <ul>
+          {% if admin %} {{ admin }} {% endif %} {% for ailment in ailments %}
           <li>
-		  {{ ailment.ailment_name }}
+            {{ ailment.ailment_name }}
             <div class="content">
-		    <article id="content-{{ailment.id}}">
-                <p>
-		{{ ailment.symptoms }}
-		</p>
-                <p>
-		{{ ailment.causes }}
-		</p>
-		<p>
-                {{ ailment.effects }}
-                </p>
-		                <p>
-                {{ ailment.natural_treatments }}
-                </p>
-		                <p>
-                {{ ailment.drugs }}
-                </p>
-		                <p>
-                {{ ailment.diets }}
-                </p>
-		                <p>
-                {{ ailment.exercises }}
-                </p>
+              <article id="content-{{ailment.id}}">
+                <p>{{ ailment.symptoms }}</p>
+                <p>{{ ailment.causes }}</p>
+                <p>{{ ailment.effects }}</p>
+                <p>{{ ailment.natural_treatments }}</p>
+                <p>{{ ailment.drugs }}</p>
+                <p>{{ ailment.diets }}</p>
+                <p>{{ ailment.exercises }}</p>
               </article>
 
               <div class="articleBtn">
@@ -91,7 +101,7 @@
                   <button
                     class="readMoreBtn"
                     id="read-more"
-		    onclick="readMore(event,'content-{{ ailment.id }}')"
+                    onclick="readMore(event,'content-{{ ailment.id }}')"
                   >
                     Read more
                   </button>
@@ -105,8 +115,7 @@
             </div>
           </li>
 
-	{% endfor %}
-
+          {% endfor %}
         </ul>
       </main>
 
@@ -120,30 +129,95 @@
 
       <!-- Add Data Modal -->
       <div class="add-data-form" id="add-data-form">
-
         <div class="modal" id="add-data-modal">
           <div class="modal-content">
             <span class="close-button" id="close-button">&times;</span>
             <h2>Add Data</h2>
-            <form method="post" action='/dashboard'>
+            <form method="post" action="/dashboard">
               <!-- Form fields go here -->
-              <label for="data">Ailment:</label>
-	      <input type="text" id="data" name="ailment" required /></br>
-	      <label for="data">Symptoms:</label>
-              <input type="text" id="data" name="symptoms" required /></br>
-	      <label for="data">Causes:</label>
-              <input type="text" id="data" name="causes" required /></br>
-	      <label for="data">Effects:</label>
-              <input type="text" id="data" name="effects" required /></br>
-	      <label for="data">Natural Treatments:</label>
-              <input type="text" id="data" name="naturaltreatments" required /></br>
-	      <label for="data">Drugs:</label>
-              <input type="text" id="data" name="drugs" required /></br>
-	      <label for="data">Diets:</label>
-              <input type="text" id="data" name="diets" required /></br>
-	      <label for="data">Exercises:</label>
-              <input type="text" id="data" name="exercises" required /></br>
-              <button type="submit">Submit</button>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Ailment:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="ailment" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Symptoms:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="symptoms" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Causes:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="causes" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Effects:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="effects" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data"
+                    >Natural Treatments:</label
+                  >
+                </div>
+                <div class="form_input">
+                  <input
+                    type="text"
+                    id="data"
+                    name="naturaltreatments"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Drugs:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="drugs" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Diets:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="diets" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <div class="form_label">
+                  <label class="form_label" for="data">Exercises:</label>
+                </div>
+                <div class="form_input">
+                  <input type="text" id="data" name="exercises" required />
+                </div>
+              </div>
+
+              <div class="add_data">
+                <button type="submit">Submit</button>
+              </div>
             </form>
           </div>
         </div>
